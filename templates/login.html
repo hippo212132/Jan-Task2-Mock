@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="login_form" method="POST" action="/login">
+        <input type="text" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="password" name ="cpass" placeholder="Confirm Password">
+        <button class="LoginButton" value="LOGIN" name="action">
+                    Submit
+                </button>
+
+
+        {% if error %}
+        <p class="error"> {{ error }}</p>
+        {% endif %}
+        
+    </form>
+</body>
+</html>
+
+{% endblock %}

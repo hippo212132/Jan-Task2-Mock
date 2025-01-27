@@ -1,0 +1,101 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.signup {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+    
+    
+    
+
+
+}
+
+.Image {
+    width: 140%;
+    height: 140%;
+    background-repeat: no-repeat;
+    /* Remove the images below */
+    background-size: cover;
+    object-fit:contain;
+}
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    max-width: 400px; /* Adjust this value as needed */
+}
+.email_user_layout {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    padding: 10px;
+}
+.Pass_layout {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    padding: 10px;
+}
+
+
+
+
+.Pass_layout input[type="password"] {
+    width: 48%; /* Adjust this value as needed to fit your design */
+}
+.email_user_layout input[type="email"],
+.email_user_layout input[type="text"] {
+    width: 48%; /* Adjust this value as needed to fit your design */
+}
+.signup-body {
+    justify-content: center;
+    
+    
+}
+
+/* Add this CSS to ensure the form is not stuck underneath the navbar */
+.form_layout {
+    padding: 10px;
+    border: 2px solid #ccc; /* Adjust the color and width as needed */
+    border-radius: 10px; /* Adjust the radius as needed */
+    
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+    
+    
+}
+
+/* Additional styling for form elements */
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+.error {
+    color: red;
+    font-size: 14px;
+    text-wrap: wrap;
+    margin-top: 10px; /* Add some margin to separate the error message from the input */
+}
+
+.email_user_layout {
+    padding: 10px;
+    align-content: space-between;
+    
+}

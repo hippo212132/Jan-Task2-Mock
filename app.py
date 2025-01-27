@@ -20,21 +20,50 @@ Session(app)
 @app.route("/")
 def index():
 
-    if session.get("user"):
-        pass
+    if not session.get("user"):
+        return redirect("/signup")
+    
+    return render_template("index.html", user=session["user"])
 
     #Checking if a session is avaliable it will pass for now.
     #Eventually it will skip login if a session is found.
 
-    return redirect("/signup")
+    
     #If No session was found, you would be redirected to signup Page
+
+
+@app.route("/login", methods = ["GET", "POST"])
+def login():
+    if session.get("user"):
+        return render_template("index.html", user=session["user"])
+
+    if request.method == "POST":
+
+
+        email = request.form.get("email")
+        password = request.form.get("password")
+
+        user = db.check_user(email, password)
+
+        if user:
+            return render_template("index.html", user=session["user"] )
+        
+        else:
+            return render_template("login.html", error="Not a valid user")
+
+
+@app.route("/logout")
+def logout():
+    if session.get("user"):
+        session.clear()
+         
 
 
 @app.route("/signup", methods = ["GET", "POST"])
 def signup():
     
     if session.get("user"):
-        pass
+        return render_template("index.html", user=session["user"])
     
 
     if request.method == "POST":
@@ -53,6 +82,10 @@ def signup():
         if len(Password) <=0:
             return render_template("signup.html", error="Please Enter a password")
         
+        cpass = request.form.get("cpass")
+        if Password != cpass:
+            return render_template("signup.html", error="Confirm Password should match password")
+        
         Phone = request.form.get("Phone")
         if len(Phone) < 11 or "07" not in Phone:
             return render_template("signup.html", error="Please Enter a valid phone Number")
@@ -61,7 +94,7 @@ def signup():
 
         session["user"] = user
 
-        return render_template("index.html")
+        return render_template("login.html")
     else:
         return render_template("signup.html")
 
