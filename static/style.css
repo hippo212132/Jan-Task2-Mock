@@ -11,9 +11,12 @@ body {
     display: block;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 110vh;
     display: flex;
     flex-direction: column;
+    margin-right: 90em; 
+    border: 20px;
+    z-index: 2000;
     
     
     
@@ -22,68 +25,64 @@ body {
 
 }
 
-.Image {
-    width: 140%;
-    height: 140%;
-    background-repeat: no-repeat;
-    /* Remove the images below */
-    background-size: cover;
-    object-fit:contain;
+h1{
+    z-index: 1111111;
+    color: rgb(243, 167, 26);
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-input[type="text"], input[type="password"], input[type="email"] {
-    width: 100%;
-    padding: 12px;
+.signupBTN {
+    padding: 23px;
+    width: 55%;
+    max-width: 100%;
+    border-radius: 12px;
+    background-color: rgb(255, 189, 47);
+    
+}
+
+
+
+
+.email_user_layout, .Pass_layout{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    padding: 10px;
+    align-content: space-between;
+    gap: 10px;
     box-sizing: border-box;
-    max-width: 400px; /* Adjust this value as needed */
-}
-.email_user_layout {
-    display: flex;
-    justify-content: space-between;
-    width: 500px;
-    padding: 10px;
-}
-.Pass_layout {
-    display: flex;
-    justify-content: space-between;
-    width: 500px;
-    padding: 10px;
-}
-
-
-
-
-.Pass_layout input[type="password"] {
-    width: 48%; /* Adjust this value as needed to fit your design */
-}
-.email_user_layout input[type="email"],
-.email_user_layout input[type="text"] {
-    width: 48%; /* Adjust this value as needed to fit your design */
-}
-.signup-body {
-    justify-content: center;
-    
+    max-width: 100%; /* Adjust this value as needed */
     
 }
+
+input.phone_layout {
+    width: 52%;
+    align-items: center;
+    padding-right: 1em;
+    border-radius: 12px;
+    max-width: 100%;
+   
+}
+
+.phone_layout {
+    margin-bottom: 10px;
+}
+
+
+
 
 /* Add this CSS to ensure the form is not stuck underneath the navbar */
-.form_layout {
-    padding: 10px;
-    border: 2px solid #ccc; /* Adjust the color and width as needed */
-    border-radius: 10px; /* Adjust the radius as needed */
-    
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
-    
-    
-}
+
 
 /* Additional styling for form elements */
-.form-group {
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: space-between;
+
+
+input {
+    padding: 1em;
+    width: 20em;
+    height: 2em;
+    
 }
-
-
 
 
 
@@ -94,8 +93,3 @@ input[type="text"], input[type="password"], input[type="email"] {
     margin-top: 10px; /* Add some margin to separate the error message from the input */
 }
 
-.email_user_layout {
-    padding: 10px;
-    align-content: space-between;
-    
-}

@@ -8,8 +8,11 @@
         Home
     </head>
     <link rel="stylesheet" href="static/style.css">
+    
     <body class="signup-body">
+        
         <form class="signup" name="signup" method="POST" action="/signup">
+            <h1> Login and Start your adventure</h1>
 
             <div class="email_user_layout">
             <input type="text" name="Email" placeholder="Email">
@@ -23,7 +26,7 @@
 
             <input class="phone_layout" type="text" name="Phone"placeholder="phone">
 
-            <button name="action" value="register"> SignUP</button>
+            <button class="signupBTN" name="action" value="register"> SignUP</button>
 
             {% if error %}
             <p class="error"> {{ error }}</p>

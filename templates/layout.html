@@ -8,20 +8,33 @@
     <link rel="stylesheet" href="static/layout.css">
     <title>Document</title>
 </head>
-<div class="Image" style="background-image: url('/static/geranimo-PuhnmljHXJ8-unsplash.jpg')">
+<div class="Image" style="background-image: url('static/giulia-salvaterra-rFMVkdU6Dt4-unsplash.jpg')">
 
 
 <body >
 
     <header class="header">
-        <a href="" class="logo">CSS Nav</a>
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <a href="" class="logo">Riget Zoo</a>
+       
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">
-          <li><a href="#work">Our Work</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#careers">Careers</a></li>
-          <li><a href="#contact">Contact</a></li>
+            {% if user%}
+          <li class="droplist"><a href="#work">Account</a></li>
+            <ul class="dropdown">
+                <li><a href="/account">Account Settings</a></li>
+                <li><a href="/ViewBookings">View Booking</a></li>
+                <li><a href="/Accessibility">Accessibility</a></li>
+                <li><a href="Loyalty">Loyalty Rewards</a></li>
+            </ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/tickets">Tickets</a></li>
+          <li><a href="/logout">Logout</a></li>
+          {%else%}
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/signup">Signup</a></li>
+          <li><a href="/login">Login</a></li>
+          {%endif%}
         </ul>
         </header>
 
