@@ -3,7 +3,7 @@
 
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_session import Session
-from flask_login import login_manager, login_required, logout_user
+
 import db
 
 
@@ -21,7 +21,7 @@ Session(app)
 def index():
 
     if not session.get("user"):
-        return redirect("/signup")
+        return render_template("index.html")
     
     return render_template("index.html", user=session["user"])
 
@@ -54,8 +54,10 @@ def login():
 
 @app.route("/logout")
 def logout():
-    if session.get("user"):
+    if 'user' in session:
         session.clear()
+    return redirect("/")
+    
          
 
 
