@@ -19,13 +19,12 @@ a {
 
 .dropdown li {
   display: block;
-  list-style: initial;
+  list-style: none;
   
 }
 
 ul.dropdown {
-  width: 100;
-  position: absolute;
+  width: 100px;
   z-index: 999;
   display: none;
   transition: .5s ease-in;
@@ -35,23 +34,29 @@ ul.dropdown {
 }
 
 
-.droplist:hover ul.dropdown li {
-  display: block;
-  
-  background-color: #7CAADC;
-  gap: 7.5px;
+li.droplist:hover ul.dropdown li {
+ 
+  position: relative;
+  background-color: #299617;
   border-radius: 20px;
-  margin-top: auto;
+  z-index: 99;
   
-  padding: 35px;
-  
+  transition: height 0.3, ease-in;
+}
+
+li.droplist:hover ul.dropdown {
+  display: flex;
+  background-color: #299617;
+  border-radius: 20px;
+  justify-content: initial;
+  z-index: 999;
+  position: relative;
   
 }
 
-
 .header {
   background-color: #000000;
-  overflow:visible;
+  overflow:hidden;
   box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
   position: fixed;
   width: 97%;
@@ -61,6 +66,7 @@ ul.dropdown {
   margin-top: 50px;
   margin-left: 35px;
   border-radius: 12px;
+  padding: 10px;
   
   
 }
@@ -124,6 +130,8 @@ ul.dropdown {
   font-size: 2em;
   padding: 10px 30px;
   text-decoration: none;
+  font-family: harima;
+  src: url('https://www.fontspace.com/h-harima-font-f101381')
 }
 
 /* menu */

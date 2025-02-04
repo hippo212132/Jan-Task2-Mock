@@ -4,29 +4,27 @@ body {
     padding: 0;
     width: 1920px;
     height: 1080px;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .signup {
     display: block;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 45vh;
     display: flex;
     flex-direction: column;
     
     border: 20px;
     z-index: 2000000;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 20vh;
+    left: 2vh;
+    right: 10vh;
     bottom: 0;
     width: 44%;
     overflow: hidden;
-    border: 2px solid black;
-    border-radius: 20px;
-    padding: 10px;
+    
     
 
 
@@ -34,7 +32,7 @@ body {
 
 h1{
     z-index: 1111111;
-    color: rgb(243, 167, 26);
+    color: rgb(90, 255, 49);
     font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -43,7 +41,7 @@ h1{
     width: 55%;
     max-width: 100%;
     border-radius: 12px;
-    background-color: rgb(255, 189, 47);
+    background-color: rgb(37, 153, 8);
     
 }
 
@@ -100,4 +98,22 @@ input {
     margin-top: 10px; /* Add some margin to separate the error message from the input */
 }
 
-
+.login {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    
+    border: 20px;
+    z-index: 2000000;
+    position: absolute;
+    top: 20vh;
+    left: 2vh;
+    right: 10vh;
+    bottom: 0;
+    width: 44%;
+    overflow: hidden;
+    
+}

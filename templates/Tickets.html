@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" class="TICKET_FORM" action="/tickets">
+    <table class="Tickets">
+        <tr class="table_headings">
+            <th>Ticket Type</th>
+            <th>Ticket Perks</th>
+            <th>Ticket Price</th>
+            <th>QTY</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td>Regular Ticket</td>
+            <td> - Access To Venue</td>
+            <td> £15.99</td>
+            <td>
+                <input type="number" class="QTY1" placeholder="0">
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>VIP Ticket</td>
+            <td>- Priority Access to any sector
+                <br>- Exlsuive Access to Premium Seating
+                 <br>- VIP lounging areas.
+                <br>- Exlusive Access to secret live events
+            </td>
+            <td> £24.99</td>
+            <td>
+                <input type="number" name="QTY" class="QTY" placeholder="0">
+            </td>
+            <td>
+            {{total}}
+            </td>
+            </tr>
+
+
+        </tr>
+        
+    </table>
+    <button name="action">Submit</button>
+</form>
+</body>
+</html>

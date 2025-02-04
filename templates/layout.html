@@ -12,20 +12,22 @@
 
 
 <body >
-
+    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
     <header class="header">
         <a href="" class="logo">Riget Zoo</a>
        
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">
             {% if user%}
-          <li class="droplist"><a href="#work">Account</a></li>
-            <ul class="dropdown">
-                <li><a href="/account">Account Settings</a></li>
-                <li><a href="/ViewBookings">View Booking</a></li>
-                <li><a href="/Accessibility">Accessibility</a></li>
-                <li><a href="Loyalty">Loyalty Rewards</a></li>
-            </ul>
+            <li class="droplist">
+                <a href="#work">Account</a>
+            
+                <ul class="dropdown">
+                    <li><a href="/account">Account Settings</a></li>
+                    <li><a href="/ViewBookings">View Booking</a></li>
+                    <li><a href="Loyalty">Loyalty Rewards</a></li>
+                </ul>
+            </li>
           <li><a href="/about">About</a></li>
           <li><a href="/tickets">Tickets</a></li>
           <li><a href="/logout">Logout</a></li>

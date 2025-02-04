@@ -100,7 +100,32 @@ def signup():
     else:
         return render_template("signup.html")
 
+@app.route("/tickets", methods = ["GET", "POST"])
+def tickets():
 
+    
+    if request.method == "POST":
+
+        
+        
+        TICKET_PRICE = 15.99
+        VIP_TICKET_PRICE = 24.99
+
+        qty = request.form.get("QTY")
+        
+        
+        
+        total = float(VIP_TICKET_PRICE) * float(qty)
+        return render_template("Tickets.html", total = total)
+    return render_template("Tickets.html")
+    
+@app.route("/about") 
+def about():
+    return render_template("about.html") 
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 # main
 if __name__ == "__main__":
     app.run(debug=True)
