@@ -32,24 +32,6 @@ def index():
     #If No session was found, you would be redirected to signup Page
 
 
-@app.route("/login", methods = ["GET", "POST"])
-def login():
-    if session.get("user"):
-        return render_template("index.html", user=session["user"])
-
-    if request.method == "POST":
-
-
-        email = request.form.get("email")
-        password = request.form.get("password")
-
-        user = db.check_user(email, password)
-
-        if user:
-            return render_template("index.html", user=session["user"] )
-        
-        else:
-            return render_template("login.html", error="Not a valid user")
 
 
 @app.route("/logout")
@@ -99,6 +81,28 @@ def signup():
         return render_template("login.html")
     else:
         return render_template("signup.html")
+
+@app.route("/login", methods = ["GET", "POST"])
+def login():
+
+    if not session.get("user"):
+        return render_template("login.html")
+ 
+
+    if request.method == "POST":
+
+
+        email = request.form.get("email")
+        password = request.form.get("password")
+
+        user = db.check_user(email, password)
+
+        session["user"] = user
+
+        return render_template("index.html", user=session["user"])
+        
+    return render_template("login.html", error="Not a valid user")
+
 
 @app.route("/tickets", methods = ["GET", "POST"])
 def tickets():

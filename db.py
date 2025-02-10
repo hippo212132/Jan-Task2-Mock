@@ -9,7 +9,7 @@ cur = connection.cursor()
 
 def hash(phrase): #This is a function used to hash a new password
  
-    object = hashlib.md5(phrase.encode())
+    object = hashlib.md5(str(phrase).encode())
     object = object.hexdigest()
  
     return object
@@ -38,9 +38,9 @@ def check_email(email):
 
 def check_user(email, password):
 
-    password = hash(password)
+    password = hash(str(password))
 
-    cur.execute("SELECT * FROM users WHERE email = ? AND password = ?", (email, password,))
+    cur.execute("SELECT * FROM users WHERE email = ? AND password = ?", (email, password))
 
     
 
